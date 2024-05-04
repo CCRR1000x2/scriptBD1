@@ -33,7 +33,7 @@ CREATE TABLE Departamento (
 CREATE TABLE Municipio (
     idMunicipio VARCHAR(4) PRIMARY KEY NOT NULL,
     municipio VARCHAR(30) NOT NULL UNIQUE,
-    departamento VARCHAR(2) NOT NULL FOREIGN KEY REFERENCES Departamento(idDepartamento)
+    idDepartamento VARCHAR(2) NOT NULL FOREIGN KEY REFERENCES Departamento(idDepartamento)
 );
 
 CREATE TABLE TipoConsulta (
@@ -69,10 +69,11 @@ CREATE TABLE TipoIncendio (
 
 CREATE TABLE ReporteIncendio (
     idReporteIncendio INT PRIMARY KEY NOT NULL,
-    fechaHoraReporte DATETIME NOT NULL,
-    tipoIncendio INT NOT NULL FOREIGN KEY REFERENCES TipoIncendio (idTipoIncendio),
-    municipio INT NOT NULL FOREIGN KEY REFERENCES Municipio (idMunicipio),
-    lugar TEXT NOT NULL,
+    fechaReporte DATE NOT NULL,
+    horaReporte TIME,
+    idTipoIncendio INT NOT NULL FOREIGN KEY REFERENCES TipoIncendio (idTipoIncendio),
+    idMunicipio VARCHAR(4) NOT NULL FOREIGN KEY REFERENCES Municipio (idMunicipio),
+    lugar TEXT,
     latitud DECIMAL(6,8),
     longitud DECIMAL(6,8),
     hectarias DECIMAL(6,2),
