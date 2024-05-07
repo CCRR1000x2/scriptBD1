@@ -1,5 +1,5 @@
 
--- CREACIÓN BASE DE DATOS FIREBIRD --
+/* CREACIÓN BASE DE DATOS FIREBIRD */
 CREATE DATABASE 'hospitales.fdb' USER '' PASSWORD '';
 
 CONNECT 'hospitales.fdb' USER '' PASSWORD '';
@@ -23,10 +23,13 @@ CREATE TABLE Departamento (
 
 CREATE TABLE Municipio (
     idMunicipio VARCHAR(4) PRIMARY KEY NOT NULL,
-    municipio VARCHAR(30) NOT NULL UNIQUE,
+    municipio VARCHAR(30) NOT NULL,
     idDepartamento VARCHAR(2) NOT NULL,
     FOREIGN KEY (idDepartamento) REFERENCES Departamento(idDepartamento)
 );
+
+/* ALTER TABLE Municipio DROP CONSTRAINT NombreRestriccion; */
+
 
 CREATE TABLE TipoConsulta (
     idTipoConsulta INT PRIMARY KEY NOT NULL,
@@ -34,9 +37,14 @@ CREATE TABLE TipoConsulta (
 );
 
 CREATE TABLE CausaAtencion (
-    codigoCIE VARCHAR(5) PRIMARY KEY NOT NULL,
-    descripcion VARCHAR(250) NOT NULL UNIQUE    
+    codigoCIE VARCHAR(15) PRIMARY KEY NOT NULL,
+    descripcion VARCHAR(250) NOT NULL    
 );
+
+/* 
+alter table causaatencion drop column descripcion;
+alter table causaatencion add column descripcion VARCHAR(250) NOT NULL;
+ */
 
 CREATE TABLE CondicionEgreso (
     idCondicionEgreso INT PRIMARY KEY NOT NULL,
@@ -46,6 +54,11 @@ CREATE TABLE CondicionEgreso (
 CREATE TABLE Tratamiento (
     idTratamiento INT PRIMARY KEY NOT NULL,
     Tratamiento VARCHAR(10) NOT NULL UNIQUE    
+);
+
+CREATE TABLE TipoServicios (
+    idTipoServicios INT PRIMARY KEY NOT NULL,
+    TipoServicios VARCHAR(20) NOT NULL UNIQUE
 );
 
 CREATE TABLE TipoIncendio (
@@ -67,31 +80,47 @@ CREATE TABLE ReporteIncendio (
     FOREIGN KEY (idMunicipio) REFERENCES Municipio (idMunicipio)
 );
 
-CREATE TABLE TipoServicios (
-    idTipoServicios INT PRIMARY KEY NOT NULL,
-    TipoServicios VARCHAR(20) NOT NULL UNIQUE
-);
+/* CREATE TABLE AtencionPorRangoEdad (
+    idAtencionPorRangoEdad INT PRIMARY KEY NOT NULL,
+    limInfRango INT NOT NULL,
+    limSupRango INT NOT NULL,
+    codigoCIE VARCHAR(15) NOT NULL REFERENCES CausaAtencion (codigoCIE),
+    idSexo INT NOT NULL REFERENCES Sexo (idSexo),
+    idTipoServicios INT NOT NULL REFERENCES TipoServicios (idTipoServicios),
+    total INT
+); */
 
 CREATE TABLE AtencionPorRangoEdad (
     idAtencionPorRangoEdad INT PRIMARY KEY NOT NULL,
     limInfRango INT NOT NULL,
     limSupRango INT NOT NULL,
-    codigoCIE VARCHAR(5) NOT NULL REFERENCES CausaAtencion (codigoCIE),
+    codigoCIE VARCHAR(15) NOT NULL REFERENCES CausaAtencion (codigoCIE),
+    hombres INT NOT NULL,
+    mujeres INT NOT NULL,
+    ignorado INT NOT NULL,
+    idTipoServicios INT NOT NULL REFERENCES TipoServicios (idTipoServicios)
+);
+
+/* CREATE TABLE AtencionPorDepartamento (
+    idAtencionPorDepartamento INT PRIMARY KEY NOT NULL,
+    departamento VARCHAR(2) NOT NULL REFERENCES Departamento (idDepartamento),
+    codigoCIE VARCHAR(15) NOT NULL REFERENCES CausaAtencion (codigoCIE),
     idSexo INT NOT NULL REFERENCES Sexo (idSexo),
     idTipoServicios INT NOT NULL REFERENCES TipoServicios (idTipoServicios),
     total INT
-);
+); */
 
 CREATE TABLE AtencionPorDepartamento (
     idAtencionPorDepartamento INT PRIMARY KEY NOT NULL,
     departamento VARCHAR(2) NOT NULL REFERENCES Departamento (idDepartamento),
-    codigoCIE VARCHAR(5) NOT NULL REFERENCES CausaAtencion (codigoCIE),
-    idSexo INT NOT NULL REFERENCES Sexo (idSexo),
-    idTipoServicios INT NOT NULL REFERENCES TipoServicios (idTipoServicios),
-    total INT
+    codigoCIE VARCHAR(15) NOT NULL REFERENCES CausaAtencion (codigoCIE),
+    hombres INT NOT NULL,
+    mujeres INT NOT NULL,
+    ignorado INT NOT NULL,
+    idTipoServicios INT NOT NULL REFERENCES TipoServicios (idTipoServicios)
 );
 
-CREATE TABLE AtencionPorTipoConsulta (
+/* CREATE TABLE AtencionPorTipoConsulta (
     idAtencionPorTipoConsulta INT PRIMARY KEY NOT NULL,
     limInfRango INT NOT NULL,
     limSupRango INT NOT NULL,
@@ -121,7 +150,7 @@ CREATE TABLE PromedioEstanciaEgresados (
     idDepartamento VARCHAR(2) NOT NULL REFERENCES Departamento (idDepartamento),
     totalEgresados INT NOT NULL,
     promedioEstancia DECIMAL(4,2) NOT NULL
-);
+); */
 
 
 
