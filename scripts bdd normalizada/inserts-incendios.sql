@@ -460,7 +460,7 @@ INSERT INTO ReporteIncendio VALUES (457,'2021-04-27','15:00:00',1,'1508','Sacsam
 INSERT INTO ReporteIncendio VALUES (458,'2021-04-27','15:30:00',1,'1503','Aldea San Luis',14.92777778,-90.35416667,3);
 INSERT INTO ReporteIncendio VALUES (459,'2021-04-27','17:20:00',1,'1712','Colonia Kachoch',16.31361111,-89.40444444,7);
 INSERT INTO ReporteIncendio VALUES (460,'2021-04-28','07:25:00',1,'2009','Aldea El Pedregal',14.63333333,-89.41666667,4);
-INSERT INTO ReporteIncendio VALUES (461,'2021-04-28','07:45:00',1,'2004','Aldea  Tansha',14.775.27778,-89.24166667,3);
+INSERT INTO ReporteIncendio VALUES (461,'2021-04-28','07:45:00',1,'2004','Aldea  Tansha',14775.27778,-89.24166667,3);
 INSERT INTO ReporteIncendio VALUES (462,'2021-04-28','11:15:00',1,'1508','Aldea Ribaco',15.36944444,-90.03527778,NULL);
 INSERT INTO ReporteIncendio VALUES (463,'2021-04-28','11:15:00',1,'1508','Aldea Pibao',15.36944444,-90.03527778,2);
 INSERT INTO ReporteIncendio VALUES (464,'2021-04-28','12:15:00',1,'1508','Caserio Nuevo San Rafael',15.33527778,-90.10166667,3);
@@ -512,4 +512,3 @@ INSERT INTO ReporteIncendio VALUES (509,'2021-06-11','12:00:00',1,'0202','Aldea 
 INSERT INTO ReporteIncendio VALUES (510,'2021-06-22','15:40:00',1,'1712','Finca San Pedro',16.33722222,-89.3825,14.2);
 INSERT INTO ReporteIncendio VALUES (511,'2021-06-30','12:10:00',1,'1703','Barrio Valle de La Paz',16.90555556,-89.93583333,1);
 INSERT INTO ReporteIncendio VALUES (512,'2021-07-01','08:16:00',2,'1713','Oeste de Yaxchile; PNSL                                                            ',16.98083333,-90.95527778,1.5);
-
