@@ -1,5 +1,3 @@
-
-
 INSERT INTO CausaAtencion VALUES ('A00','Cólera');
 INSERT INTO CausaAtencion VALUES ('A000','Cólera debido a Vibrio cholerae 01, biotipo cholerae');
 INSERT INTO CausaAtencion VALUES ('A001','Cólera debido a Vibrio cholerae 01, biotipo el Tor');
@@ -14333,7 +14331,6 @@ INSERT INTO CausaAtencion VALUES ('U09','Condición posterior a COVID-19');
 INSERT INTO CausaAtencion VALUES ('U099','Afección posterior a COVID-19, no especificada');
 INSERT INTO CausaAtencion VALUES ('U089','Historia de persona con COVID-19, no especificada');
 INSERT INTO CausaAtencion VALUES ('U129','Vacunas covid-19 que causan efectos adversos en uso terapéutico');
-INSERT INTO CausaAtencion VALUES ('U129','Vacunas covid-19 que causan efectos adversos en uso terapéutico, no especificado');
 INSERT INTO CausaAtencion VALUES ('U82','Resistencia a antibióticos betalactámicos');
 INSERT INTO CausaAtencion VALUES ('U820','Resistencia a penicilina ');
 INSERT INTO CausaAtencion VALUES ('U821','Resistencia a meticilina');
@@ -14361,3 +14358,6 @@ INSERT INTO CausaAtencion VALUES ('U96','Intoxicación alimentaria por clenbuter
 INSERT INTO CausaAtencion VALUES ('U97','Enfermeded febril exantemática');
 INSERT INTO CausaAtencion VALUES ('U98','Parálisis flácida aguda');
 INSERT INTO CausaAtencion VALUES ('U99','Síndrome coqueluchoide');
+INSERT INTO CausaAtencion VALUES ('R00-R99', 'Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte');
+INSERT INTO CausaAtencion VALUES ('Otras causas', 'Otras causas');
+
