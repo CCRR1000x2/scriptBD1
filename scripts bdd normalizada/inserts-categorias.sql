@@ -16,20 +16,32 @@ INSERT INTO Mes VALUES (12,'Diciembre');
 
 INSERT INTO Sexo VALUES (1,'Hombre');
 INSERT INTO Sexo VALUES (2,'Mujer');
+INSERT INTO Sexo VALUES (9,'Ignorado');
 
 
-INSERT INTO PuebloPertenencia VALUES (1,'Maya');
-INSERT INTO PuebloPertenencia VALUES (2,'Garifuna');
-INSERT INTO PuebloPertenencia VALUES (3,'Xinka');
-INSERT INTO PuebloPertenencia VALUES (4,'Mestizo / Ladino');
-INSERT INTO PuebloPertenencia VALUES (5,'Otro');
-INSERT INTO PuebloPertenencia VALUES (9,'Ignorado');
+INSERT INTO TipoConsulta VALUES (1,'Primer Consulta');
+INSERT INTO TipoConsulta VALUES (2,'Reconsulta');
+INSERT INTO TipoConsulta VALUES (3,'Emergencia');
+INSERT INTO TipoConsulta VALUES (4,'Primer Consulta y Emergencia');
+INSERT INTO TipoConsulta VALUES (5,'Reconsulta y Emergencia');
+INSERT INTO TipoConsulta VALUES (9,'Ignorado');
 
 
-INSERT INTO PeriodoEdad VALUES (1,'Días');
-INSERT INTO PeriodoEdad VALUES (2,'Meses');
-INSERT INTO PeriodoEdad VALUES (3,'Años');
-INSERT INTO PeriodoEdad VALUES (9,'Ignorado');
+INSERT INTO CondicionEgreso VALUES (1,'Vivo');
+INSERT INTO CondicionEgreso VALUES (2,'Muerto');
+
+
+INSERT INTO Tratamiento VALUES (1,'Médico');
+INSERT INTO Tratamiento VALUES (2,'Cirugía');
+INSERT INTO Tratamiento VALUES (3,'Obstétrico');
+
+
+INSERT INTO TipoIncendio VALUES (1,'Forestal');
+INSERT INTO TipoIncendio VALUES (2,'No Forestal');
+
+
+INSERT INTO TipoServicios VALUES (1,'Externos');
+INSERT INTO TipoServicios VALUES (2,'Internos');
 
 
 INSERT INTO Departamento VALUES ('01','Guatemala');
@@ -402,25 +414,19 @@ INSERT INTO Municipio VALUES ('2300','Extranjero','23');
 INSERT INTO Municipio VALUES ('9999','Ignorado','99');
 
 
-INSERT INTO TipoConsulta VALUES (1,'Primer Consulta');
-INSERT INTO TipoConsulta VALUES (2,'Reconsulta');
-INSERT INTO TipoConsulta VALUES (3,'Emergencia');
-INSERT INTO TipoConsulta VALUES (4,'Primer Consulta y Emergencia');
-INSERT INTO TipoConsulta VALUES (5,'Reconsulta y Emergencia');
-INSERT INTO TipoConsulta VALUES (9,'Ignorado');
+/* 
+INSERT INTO PuebloPertenencia VALUES (1,'Maya');
+INSERT INTO PuebloPertenencia VALUES (2,'Garifuna');
+INSERT INTO PuebloPertenencia VALUES (3,'Xinka');
+INSERT INTO PuebloPertenencia VALUES (4,'Mestizo / Ladino');
+INSERT INTO PuebloPertenencia VALUES (5,'Otro');
+INSERT INTO PuebloPertenencia VALUES (9,'Ignorado');
+ */
 
-
-INSERT INTO CondicionEgreso VALUES (1,'Vivo');
-INSERT INTO CondicionEgreso VALUES (2,'Muerto');
-
-
-INSERT INTO Tratamiento VALUES (1,'Médico');
-INSERT INTO Tratamiento VALUES (2,'Cirugía');
-INSERT INTO Tratamiento VALUES (3,'Obstétrico');
-
-
-INSERT INTO TipoIncendio VALUES (1,'Forestal');
-INSERT INTO TipoIncendio VALUES (2,'No Forestal');
+/* INSERT INTO PeriodoEdad VALUES (1,'Días');
+INSERT INTO PeriodoEdad VALUES (2,'Meses');
+INSERT INTO PeriodoEdad VALUES (3,'Años');
+INSERT INTO PeriodoEdad VALUES (9,'Ignorado'); */
 
 
 
